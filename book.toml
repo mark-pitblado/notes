@@ -25,5 +25,5 @@ additional-css = [
 no-section-label = true
 git-repository-url = "https://github.com/mark-pitblado/notes"
 git-repository-icon = "fa-github"
-edit-url-template = "https://github.com/mark-pitblado/notes/edit/main/example/{path}"
+edit-url-template = "https://github.com/mark-pitblado/notes/edit/main/{path}"
 cname = "notes.markpitblado.me"

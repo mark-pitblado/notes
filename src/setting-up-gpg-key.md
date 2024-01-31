@@ -26,3 +26,5 @@ To add the key to the `.zshrc` (or `.bashrc`)
 #In ~/.zshrc
 export GPG_TTY=$(tty)
 ```
+
+If "keep my email private" has been enabled in GitHub, then the email associated with the key must match the no-reply email provided by GitHub.

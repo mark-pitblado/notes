@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found - Mark&#x27;s Notes</title>
-        <base href="/">
+        <title>setting-up-gpg-key - Mark&#x27;s Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -93,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html" class="active">setting-up-gpg-key</a></li><li class="chapter-item expanded "><a href="copy-files-from-one-branch-to-another.html">copy-files-from-one-branch-to-another</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,8 +153,11 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        <a href="https://github.com/mark-pitblado/notes" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
+                        <a href="https://codeberg.org/mark-pitblado/notes" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-code-fork"></i>
+                        </a>
+                        <a href="https://codeberg.org/mark-pitblado/notes/_edit/main/src/setting-up-gpg-key.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
                     </div>
@@ -183,14 +185,34 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="how-to-setup-a-gpg-key-in-git"><a class="header" href="#how-to-setup-a-gpg-key-in-git">How to setup a GPG key in Git</a></h1>
+<p>This page is going to assume that a key has already been created on the system and added to GitHub through the web interface.</p>
+<p>To set the list of keys on the system</p>
+<pre><code class="language-zsh">gpg --list-secret-keys --keyid-format=long
+</code></pre>
+<p>To configure git to use the key</p>
+<pre><code class="language-zsh">git config --global user.signingkey &lt;keyid-from-step-above&gt;
+</code></pre>
+<p>To set git to sign commits by default</p>
+<pre><code class="language-zsh">git config --global commit.gpgsign true
+</code></pre>
+<p>To add the key to the <code>.zshrc</code> (or <code>.bashrc</code>)</p>
+<pre><code class="language-zsh">#In ~/.zshrc
+export GPG_TTY=$(tty)
+</code></pre>
+<p>If &quot;keep my email private&quot; has been enabled in GitHub, then the email associated with the key must match the no-reply email provided by GitHub.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="lazy-git.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next prefetch" href="copy-files-from-one-branch-to-another.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -198,7 +220,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="lazy-git.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next prefetch" href="copy-files-from-one-branch-to-another.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

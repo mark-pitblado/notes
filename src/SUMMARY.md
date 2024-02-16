@@ -7,3 +7,7 @@
     - [setup-a-repository-with-remote](./setup-a-repository-with-remote.md)
     - [lazy-git](./lazy-git.md)
     - [setting-up-gpg-key](./setting-up-gpg-key.md)
+
+# Tools
+- [zoxide](./zoxide.md)
+

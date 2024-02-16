@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>setup-a-repository-with-remote - Mark&#x27;s Notes</title>
+        <title>zoxide - Mark&#x27;s Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html" class="active">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html" class="active">zoxide</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -156,7 +156,7 @@
                         <a href="https://github.com/mark-pitblado/notes" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/mark-pitblado/notes/edit/main/src/setup-a-repository-with-remote.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/mark-pitblado/notes/edit/main/src/zoxide.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -185,35 +185,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="taking-a-local-repository-and-publishing-it"><a class="header" href="#taking-a-local-repository-and-publishing-it">Taking a local repository and publishing it</a></h1>
-<p>There are two basic steps.</p>
-<ol>
-<li>The remote location needs to be created</li>
-<li>The remote location needs to be setup as the remote origin for the local repository.</li>
-</ol>
-<h2 id="creating-a-new-repository-on-github"><a class="header" href="#creating-a-new-repository-on-github">Creating a new repository on GitHub</a></h2>
-<p>Creating a new repository on Github can be done through the GUI. There is no need to setup a README.md, license etc, however a description can be added since this is not part of the repo itself.</p>
-<h2 id="linking-the-local-repository-to-the-newly-created-github-repo"><a class="header" href="#linking-the-local-repository-to-the-newly-created-github-repo">Linking the local repository to the newly created GitHub repo</a></h2>
-<p>If the directory has not already been initialized with git, then running <code>git init</code> is needed. The commit message can of course be anything, but init seems somewhat standardized. Note that if a README.md or LICENSE.md was created, the <code>-f</code> (force) may be required on <code>git push</code>.</p>
-<pre><code class="language-zsh">git init
-git add -A
-git commit -m 'init'
-git remote add origin https://github.com/mark-pitblado/notes.git 
-git push -u origin main
+                        <h1 id="zoxide"><a class="header" href="#zoxide">Zoxide</a></h1>
+<blockquote>
+<p>https://github.com/ajeetdsouza/zoxide</p>
+</blockquote>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>For zoxide itself
+<code>cargo install zoxide --locked</code></p>
+<p>For fzf
+<code>sudo apt install fzf</code></p>
+<p>Within <code>.zshrc</code></p>
+<pre><code class="language-zsh">eval &quot;$(zoxide init --cmd cd zsh)&quot;
 </code></pre>
-<p>The above uses https to connect, however if ssh is desired, then the link would be replaced with something like git@github.com:mark-pitblado/notes.git.</p>
+<p>Note that this will allow for the use of <code>cd</code> as normal, so that on systems that do not have zoxide installed, cd muscle memory is maintained.</p>
+<h2 id="use"><a class="header" href="#use">Use</a></h2>
+<pre><code class="language-bash">z foo              # cd into highest ranked directory matching foo
+z foo bar          # cd into highest ranked directory matching foo and bar
+z foo /            # cd into a subdirectory starting with foo
+
+z ~/foo            # z also works like a regular cd command
+z foo/             # cd into relative path
+z ..               # cd one level up
+z -                # cd into previous directory
+
+zi foo             # cd with interactive selection (using fzf)
+
+z foo&lt;SPACE&gt;&lt;TAB&gt;  # show interactive completions (zoxide v0.8.0+, bash 4.4+/fish/zsh only)
+</code></pre>
+<h2 id="linked-documentation"><a class="header" href="#linked-documentation">Linked Documentation</a></h2>
+<p>Youtube video: https://www.youtube.com/watch?v=aghxkpyRVDY</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="git.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="setting-up-gpg-key.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="lazy-git.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -221,13 +230,10 @@ git push -u origin main
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="git.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="setting-up-gpg-key.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="lazy-git.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

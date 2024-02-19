@@ -1,6 +1,7 @@
 # Summary
 
 - [index](./index.md)
+- [setting-up-mdbook](./setting-up-mdbook.md)
 
 # Git
 - [git](./git.md)

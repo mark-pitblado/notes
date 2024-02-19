@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>git - Mark&#x27;s Notes</title>
+        <title>setting-up-mdbook - Mark&#x27;s Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html" class="active">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html" class="active">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -156,7 +156,7 @@
                         <a href="https://github.com/mark-pitblado/notes" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/mark-pitblado/notes/edit/main/src/git.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/mark-pitblado/notes/edit/main/src/setting-up-mdbook.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -185,23 +185,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="git"><a class="header" href="#git">git</a></h1>
-<p>To add changed files to staging</p>
-<p><code>git add &lt;filename&gt;</code></p>
-<p>To check the status of files that have been added to staging</p>
-<p><code>git status</code></p>
-<p>To push changes to a remote repository</p>
-<p><code>git push</code></p>
+                        <h1 id="setting-up-mdbook"><a class="header" href="#setting-up-mdbook">Setting up mdBook</a></h1>
+<p>For full documentation see: https://rust-lang.github.io/mdBook/index.html</p>
+<h2 id="install"><a class="header" href="#install">Install</a></h2>
+<pre><code class="language-zsh">cargo install mdbook
+</code></pre>
+<p>To uninstall, run</p>
+<pre><code class="language-zsh">cargo uninstall mdbook
+</code></pre>
+<h2 id="create-a-book"><a class="header" href="#create-a-book">Create a book</a></h2>
+<pre><code class="language-zsh">mdbook init my-first-book
+</code></pre>
+<h2 id="editing-the-book"><a class="header" href="#editing-the-book">Editing the book</a></h2>
+<p>All edits should be made in the src directory, and new notes should be created from the <code>SUMMARY.md</code> file, which should be present after initialization. Once the <code>SUMMARY.md</code> file is saved, and <code>mdbook serve</code> is fun, appropriate markdown files will automatically be created.</p>
+<p>For example,</p>
+<pre><code class="language-md">- [setting-up-mdbook](./setting-up-mdbook.md)
+</code></pre>
+<p>The markdown files themselves can be edited using any standard markdown syntax.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="setting-up-mdbook.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="setup-a-repository-with-remote.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="git.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -211,11 +221,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="setting-up-mdbook.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="setup-a-repository-with-remote.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="git.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

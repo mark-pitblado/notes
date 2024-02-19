@@ -2,6 +2,9 @@
 
 repo: https://github.com/ajeetdsouza/zoxide
 
+## Summary
+Zoxide is a tool that remembers previous paths that you have been to through cd, allowing you to more easily navigate between directories. It can be aliased to cd so that it essentially functions like a smarter version of the same command.
+
 ## Installation
 
 For zoxide itself

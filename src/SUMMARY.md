@@ -14,4 +14,4 @@
 
 # Tools
 - [zoxide](./zoxide.md)
-
+- [alacritty](./alacritty.md)

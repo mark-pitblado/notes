@@ -20,7 +20,7 @@ preferred-dark-theme = "mocha"
 additional-css = [
   "./theme/catppuccin.css",
   "./theme/catppuccin-admonish.css",
-  "./theme/mdbook-admonish.css", "./mdbook-admonish.css",
+  "./theme/mdbook-admonish.css", 
 ]
 no-section-label = true
 git-repository-url = "https://github.com/mark-pitblado/notes"

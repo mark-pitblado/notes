@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -260,6 +260,21 @@ sudo install lazygit /usr/local/bin
 export GPG_TTY=$(tty)
 </code></pre>
 <p>If &quot;keep my email private&quot; has been enabled in GitHub, then the email associated with the key must match the no-reply email provided by GitHub.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="starship"><a class="header" href="#starship">Starship</a></h1>
+<p>Starship is a fast command line prompt written in rust, compatible with bash, zsh and powershell (plus others)</p>
+<h2 id="installtion"><a class="header" href="#installtion">Installtion</a></h2>
+<p>To install, you may use cargo or install directly using a <code>.sh</code> file.</p>
+<pre><code class="language-zsh">cargo install starship --locked
+</code></pre>
+<h2 id="use"><a class="header" href="#use">Use</a></h2>
+<p>Simply place the following at the bottom of the <code>.zshrc</code> (or <code>.bashrc</code> etc) and reload the terminal.</p>
+<pre><code class="language-zsh">eval &quot;$(starship init zsh)&quot;
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<p>Create the configuration directory</p>
+<pre><code class="language-zsh">mkdir -p ~/.config &amp;&amp; touch ~/.config/starship.toml
+</code></pre>
+<p>Then make any cofiguration changes desired in that <code>.toml</code> file.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="zoxide"><a class="header" href="#zoxide">Zoxide</a></h1>
 <p>repo: https://github.com/ajeetdsouza/zoxide</p>
 <h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
@@ -273,7 +288,7 @@ export GPG_TTY=$(tty)
 <pre><code class="language-zsh">eval &quot;$(zoxide init --cmd cd zsh)&quot;
 </code></pre>
 <p>Note that this will allow for the use of <code>cd</code> as normal, so that on systems that do not have zoxide installed, cd muscle memory is maintained.</p>
-<h2 id="use"><a class="header" href="#use">Use</a></h2>
+<h2 id="use-1"><a class="header" href="#use-1">Use</a></h2>
 <pre><code class="language-bash">z foo              # cd into highest ranked directory matching foo
 z foo bar          # cd into highest ranked directory matching foo and bar
 z foo /            # cd into a subdirectory starting with foo

@@ -9,6 +9,9 @@
     - [lazy-git](./lazy-git.md)
     - [setting-up-gpg-key](./setting-up-gpg-key.md)
 
+# Rust
+- [starship](./starship.md)
+
 # Tools
 - [zoxide](./zoxide.md)
 

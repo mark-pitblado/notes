@@ -1,6 +1,6 @@
 # Zoxide
 
-> https://github.com/ajeetdsouza/zoxide
+repo: https://github.com/ajeetdsouza/zoxide
 
 ## Installation
 

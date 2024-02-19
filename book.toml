@@ -23,7 +23,7 @@ additional-css = [
   "./theme/mdbook-admonish.css", 
 ]
 no-section-label = true
-git-repository-url = "https://github.com/mark-pitblado/notes"
-git-repository-icon = "fa-github"
-edit-url-template = "https://github.com/mark-pitblado/notes/edit/main/{path}"
+git-repository-url = "https://codeberg.org/mark-pitblado/notes"
+git-repository-icon = "fa-code-fork"
+edit-url-template = "https://codeberg.org/mark-pitblado/notes/edit/main/{path}"
 cname = "notes.markpitblado.me"

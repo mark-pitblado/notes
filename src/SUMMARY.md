@@ -11,6 +11,7 @@
 
 # Python
 - [dictionaries](./dictionaries.md)
+- [arrays](./arrays.md)
 
 # Rust
 - [starship](./starship.md)

@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -260,6 +260,15 @@ sudo install lazygit /usr/local/bin
 export GPG_TTY=$(tty)
 </code></pre>
 <p>If &quot;keep my email private&quot; has been enabled in GitHub, then the email associated with the key must match the no-reply email provided by GitHub.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dictionaries"><a class="header" href="#dictionaries">Dictionaries</a></h1>
+<h2 id="snippets"><a class="header" href="#snippets">Snippets</a></h2>
+<p>Combine dictionary A and dictionary B <em>without</em> overwriting dictionary A's values with dictionary B's.</p>
+<pre><code class="language-python">    for key, value in isle_mapping.items():
+        if key in cart:
+            cart[key].extend(value)
+        else:
+            cart[key] = value
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="starship"><a class="header" href="#starship">Starship</a></h1>
 <p>Starship is a fast command line prompt written in rust, compatible with bash, zsh and powershell (plus others)</p>
 <h2 id="installtion"><a class="header" href="#installtion">Installtion</a></h2>

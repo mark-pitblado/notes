@@ -9,6 +9,9 @@
     - [lazy-git](./lazy-git.md)
     - [setting-up-gpg-key](./setting-up-gpg-key.md)
 
+# Python
+- [dictionaries](./dictionaries.md)
+
 # Rust
 - [starship](./starship.md)
 

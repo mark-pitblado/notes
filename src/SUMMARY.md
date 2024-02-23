@@ -19,3 +19,4 @@
 # Tools
 - [zoxide](./zoxide.md)
 - [alacritty](./alacritty.md)
+- [uv](./uv.md)

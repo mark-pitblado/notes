@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>arrays - Mark&#x27;s Notes</title>
+        <title>uv - Mark&#x27;s Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html" class="active">arrays</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html" class="active">uv</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,7 +154,7 @@
                         <a href="https://codeberg.org/mark-pitblado/notes" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-code-fork"></i>
                         </a>
-                        <a href="https://codeberg.org/mark-pitblado/notes/edit/main/src/arrays.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://codeberg.org/mark-pitblado/notes/edit/main/src/uv.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -183,30 +183,32 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="arrays"><a class="header" href="#arrays">Arrays</a></h1>
-<h2 id="snippets"><a class="header" href="#snippets">Snippets</a></h2>
-<h3 id="flatten-an-array-which-may-contain-none-values"><a class="header" href="#flatten-an-array-which-may-contain-none-values">Flatten an Array which may contain None values</a></h3>
-<pre><code class="language-python">def flatten(iterable):
-    flattened_list = []
-    for item in iterable:
-        if isinstance(item, list):
-            flattened_list.extend(flatten(item))
-        elif item is not None: 
-            flattened_list.append(item)
-    return flattened_list
+                        <h1 id="uv"><a class="header" href="#uv">UV</a></h1>
+<p>An extremely fast Python package installer and resolver.</p>
+<p>Github repo: https://github.com/astral-sh/uv</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<pre><code class="language-shell">pip install uv
+</code></pre>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<h3 id="create-a-virtual-environment"><a class="header" href="#create-a-virtual-environment">Create a virtual environment</a></h3>
+<p>The following will create a virutal environment at <code>.venv</code></p>
+<pre><code class="language-shell">uv venv
+</code></pre>
+<h3 id="activate-virtual-environment"><a class="header" href="#activate-virtual-environment">Activate virtual environment</a></h3>
+<pre><code class="language-shell">source .venv/bin/activate 
+</code></pre>
+<h3 id="install-packages-into-virtual-environment"><a class="header" href="#install-packages-into-virtual-environment">Install packages into virtual environment</a></h3>
+<pre><code class="language-shell">uv pip install flask
 </code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="dictionaries.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="alacritty.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="starship.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -214,13 +216,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="dictionaries.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="alacritty.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="starship.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

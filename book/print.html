@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -335,6 +335,23 @@ size = 14.0
 [font.normal]
 family = &quot;Fira Mono Nerd Font&quot;
 style = &quot;Medium&quot;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uv"><a class="header" href="#uv">UV</a></h1>
+<p>An extremely fast Python package installer and resolver.</p>
+<p>Github repo: https://github.com/astral-sh/uv</p>
+<h2 id="installation-3"><a class="header" href="#installation-3">Installation</a></h2>
+<pre><code class="language-shell">pip install uv
+</code></pre>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<h3 id="create-a-virtual-environment"><a class="header" href="#create-a-virtual-environment">Create a virtual environment</a></h3>
+<p>The following will create a virutal environment at <code>.venv</code></p>
+<pre><code class="language-shell">uv venv
+</code></pre>
+<h3 id="activate-virtual-environment"><a class="header" href="#activate-virtual-environment">Activate virtual environment</a></h3>
+<pre><code class="language-shell">source .venv/bin/activate 
+</code></pre>
+<h3 id="install-packages-into-virtual-environment"><a class="header" href="#install-packages-into-virtual-environment">Install packages into virtual environment</a></h3>
+<pre><code class="language-shell">uv pip install flask
 </code></pre>
 
                     </main>

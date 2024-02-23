@@ -15,5 +15,3 @@ def flatten(iterable):
     return flattened_list
 ```
 
-
-

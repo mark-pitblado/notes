@@ -9,6 +9,9 @@
     - [lazy-git](./lazy-git.md)
     - [setting-up-gpg-key](./setting-up-gpg-key.md)
 
+# Linux
+- [terminal-commands](./terminal-commands.md)
+
 # Python
 - [dictionaries](./dictionaries.md)
 - [arrays](./arrays.md)

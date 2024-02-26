@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>setup-a-repository-with-remote - Mark&#x27;s Notes</title>
+        <title>terminal-commands - Mark&#x27;s Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html" class="active">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html" class="active">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,7 +154,7 @@
                         <a href="https://codeberg.org/mark-pitblado/notes" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-code-fork"></i>
                         </a>
-                        <a href="https://codeberg.org/mark-pitblado/notes/edit/main/src/setup-a-repository-with-remote.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://codeberg.org/mark-pitblado/notes/edit/main/src/terminal-commands.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -183,33 +183,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="taking-a-local-repository-and-publishing-it"><a class="header" href="#taking-a-local-repository-and-publishing-it">Taking a local repository and publishing it</a></h1>
-<p>There are two basic steps.</p>
-<ol>
-<li>The remote location needs to be created</li>
-<li>The remote location needs to be setup as the remote origin for the local repository.</li>
-</ol>
-<h2 id="creating-a-new-repository-on-github"><a class="header" href="#creating-a-new-repository-on-github">Creating a new repository on GitHub</a></h2>
-<p>Creating a new repository on Github can be done through the GUI. There is no need to setup a README.md, license etc, however a description can be added since this is not part of the repo itself.</p>
-<h2 id="linking-the-local-repository-to-the-newly-created-github-repo"><a class="header" href="#linking-the-local-repository-to-the-newly-created-github-repo">Linking the local repository to the newly created GitHub repo</a></h2>
-<p>If the directory has not already been initialized with git, then running <code>git init</code> is needed. The commit message can of course be anything, but init seems somewhat standardized. Note that if a README.md or LICENSE.md was created, the <code>-f</code> (force) may be required on <code>git push</code>.</p>
-<pre><code class="language-zsh">git init
-git add -A
-git commit -m 'init'
-git remote add origin https://github.com/mark-pitblado/notes.git 
-git push -u origin main
-</code></pre>
-<p>The above uses https to connect, however if ssh is desired, then the link would be replaced with something like git@github.com:mark-pitblado/notes.git.</p>
+                        <h1 id="terminal-commands"><a class="header" href="#terminal-commands">Terminal Commands</a></h1>
+<p><code>cmp</code> - Compares to see if two files are equivalent</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="git.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="setting-up-gpg-key.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="lazy-git.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="dictionaries.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -219,11 +204,11 @@ git push -u origin main
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="git.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="setting-up-gpg-key.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="lazy-git.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="dictionaries.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

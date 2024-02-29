@@ -15,6 +15,7 @@
 # Python
 - [dictionaries](./dictionaries.md)
 - [arrays](./arrays.md)
+- [binary-insertion-sort](./binary-insertion-sort.md)
 
 # Rust
 - [starship](./starship.md)

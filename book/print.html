@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded "><a href="binary-insertion-sort.html">binary-insertion-sort</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -282,6 +282,75 @@ export GPG_TTY=$(tty)
         elif item is not None: 
             flattened_list.append(item)
     return flattened_list
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="binary-insertion-sort"><a class="header" href="#binary-insertion-sort">Binary insertion sort</a></h1>
+<p>Source: https://the-algorithms.com/algorithm/binary-insertion-sort</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+This is a pure Python implementation of the binary insertion sort algorithm
+
+For doctests run following command:
+python -m doctest -v binary_insertion_sort.py
+or
+python3 -m doctest -v binary_insertion_sort.py
+
+For manual testing run:
+python binary_insertion_sort.py
+&quot;&quot;&quot;
+
+
+def binary_insertion_sort(collection: list) -&gt; list:
+    &quot;&quot;&quot;
+    Sorts a list using the binary insertion sort algorithm.
+
+    :param collection: A mutable ordered collection with comparable items.
+    :return: The same collection ordered in ascending order.
+
+    Examples:
+    &gt;&gt;&gt; binary_insertion_sort([0, 4, 1234, 4, 1])
+    [0, 1, 4, 4, 1234]
+    &gt;&gt;&gt; binary_insertion_sort([]) == sorted([])
+    True
+    &gt;&gt;&gt; binary_insertion_sort([-1, -2, -3]) == sorted([-1, -2, -3])
+    True
+    &gt;&gt;&gt; lst = ['d', 'a', 'b', 'e', 'c']
+    &gt;&gt;&gt; binary_insertion_sort(lst) == sorted(lst)
+    True
+    &gt;&gt;&gt; import random
+    &gt;&gt;&gt; collection = random.sample(range(-50, 50), 100)
+    &gt;&gt;&gt; binary_insertion_sort(collection) == sorted(collection)
+    True
+    &gt;&gt;&gt; import string
+    &gt;&gt;&gt; collection = random.choices(string.ascii_letters + string.digits, k=100)
+    &gt;&gt;&gt; binary_insertion_sort(collection) == sorted(collection)
+    True
+    &quot;&quot;&quot;
+
+    n = len(collection)
+    for i in range(1, n):
+        value_to_insert = collection[i]
+        low = 0
+        high = i - 1
+
+        while low &lt;= high:
+            mid = (low + high) // 2
+            if value_to_insert &lt; collection[mid]:
+                high = mid - 1
+            else:
+                low = mid + 1
+        for j in range(i, low, -1):
+            collection[j] = collection[j - 1]
+        collection[low] = value_to_insert
+    return collection
+
+
+if __name__ == &quot;__main&quot;:
+    user_input = input(&quot;Enter numbers separated by a comma:\n&quot;).strip()
+    try:
+        unsorted = [int(item) for item in user_input.split(&quot;,&quot;)]
+    except ValueError:
+        print(&quot;Invalid input. Please enter valid integers separated by commas.&quot;)
+        raise
+    print(f&quot;{binary_insertion_sort(unsorted) = }&quot;)
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="starship"><a class="header" href="#starship">Starship</a></h1>
 <p>Starship is a fast command line prompt written in rust, compatible with bash, zsh and powershell (plus others)</p>

@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found - Mark&#x27;s Notes</title>
-        <base href="/">
+        <title>find-and-replace - Mark&#x27;s Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -91,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="find-and-replace.html">find-and-replace</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded "><a href="binary-insertion-sort.html">binary-insertion-sort</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="find-and-replace.html" class="active">find-and-replace</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded "><a href="binary-insertion-sort.html">binary-insertion-sort</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -155,6 +154,9 @@
                         <a href="https://codeberg.org/mark-pitblado/notes" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-code-fork"></i>
                         </a>
+                        <a href="https://codeberg.org/mark-pitblado/notes/edit/main/src/find-and-replace.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
 
                     </div>
                 </div>
@@ -181,14 +183,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="find-and-replace-in-neovim"><a class="header" href="#find-and-replace-in-neovim">Find and Replace in Neovim</a></h1>
+<h2 id="current-line---first-occurrence"><a class="header" href="#current-line---first-occurrence">Current Line - First Occurrence</a></h2>
+<p>Where <code>foo</code> is what you want to replace and <code>bar</code> is what you want to replace it with. 
+If what you need to search for uses <code>/</code> then <code>|</code> can be used a seperated instead.</p>
+<pre><code class="language-vimscript">:s/foo/bar/
+</code></pre>
+<h2 id="current-line---all-occurrences"><a class="header" href="#current-line---all-occurrences">Current Line - All Occurrences</a></h2>
+<pre><code class="language-vimscript">:s/foo/bar/g
+</code></pre>
+<h2 id="entire-file"><a class="header" href="#entire-file">Entire File</a></h2>
+<pre><code class="language-vimscript">:s%/food/bar
+</code></pre>
+<h2 id="remove-occurrences"><a class="header" href="#remove-occurrences">Remove Occurrences</a></h2>
+<pre><code class="language-vimscript">:s%/foo//
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="terminal-commands.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next prefetch" href="dictionaries.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -196,7 +217,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="terminal-commands.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next prefetch" href="dictionaries.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

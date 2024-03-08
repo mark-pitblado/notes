@@ -12,6 +12,9 @@
 # Linux
 - [terminal-commands](./terminal-commands.md)
 
+# Neovim
+- [find-and-replace](./find-and-replace.md)
+
 # Python
 - [dictionaries](./dictionaries.md)
 - [arrays](./arrays.md)

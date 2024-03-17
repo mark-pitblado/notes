@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>lazy-git - Mark&#x27;s Notes</title>
+        <title>terminal-commands - Mark&#x27;s Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html" class="active">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="find-and-replace.html">find-and-replace</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded "><a href="binary-insertion-sort.html">binary-insertion-sort</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html" class="active">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="find-and-replace.html">find-and-replace</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded "><a href="binary-insertion-sort.html">binary-insertion-sort</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,7 +154,7 @@
                         <a href="https://codeberg.org/mark-pitblado/notes" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-code-fork"></i>
                         </a>
-                        <a href="https://codeberg.org/mark-pitblado/notes/edit/main/src/lazy-git.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://codeberg.org/mark-pitblado/notes/edit/main/src/terminal-commands.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -183,36 +183,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="lazygit"><a class="header" href="#lazygit">lazygit</a></h1>
-<blockquote>
-<p><a href="https://github.com/jesseduffield/lazygit">repository</a></p>
-</blockquote>
-<p>Lazygit allows the use of a terminal user interface to perform git operations.</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>This can be used to install on Ubuntu</p>
-<pre><code class="language-zsh">LAZYGIT_VERSION=$(curl -s &quot;https://api.github.com/repos/jesseduffield/lazygit/releases/latest&quot; | grep -Po '&quot;tag_name&quot;: &quot;v\K[^&quot;]*')
-curl -Lo lazygit.tar.gz &quot;https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz&quot;
-tar xf lazygit.tar.gz lazygit
-sudo install lazygit /usr/local/bin
-</code></pre>
-<h2 id="commands"><a class="header" href="#commands">Commands</a></h2>
-<p>Instead of listing all the commands here, it is much easier to use <code>?</code> from within the lazygit interface. This brings up the shortcuts for all keys. I will cover the top ones that I use.</p>
-<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>&lt;space&gt;</code></td><td>adds/removes the file current selected</td></tr>
-<tr><td><code>c</code></td><td>commit, brings up interface to add message</td></tr>
-<tr><td><code>p</code></td><td>git pull</td></tr>
-<tr><td><code>P</code></td><td>git push</td></tr>
-</tbody></table>
-</div>
+                        <h1 id="terminal-commands"><a class="header" href="#terminal-commands">Terminal Commands</a></h1>
+<p><code>cmp</code> - Compares to see if two files are equivalent</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="setup-a-repository-with-remote.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="setting-up-gpg-key.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="setting-up-gpg-key.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="find-and-replace.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -222,11 +204,11 @@ sudo install lazygit /usr/local/bin
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="setup-a-repository-with-remote.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="setting-up-gpg-key.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="setting-up-gpg-key.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="find-and-replace.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

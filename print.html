@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="mocha" dir="ltr">
+<html lang="en" class="mocha" dir="">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -13,7 +13,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -33,7 +32,6 @@
         <link rel="stylesheet" href="./theme/catppuccin.css">
         <link rel="stylesheet" href="./theme/catppuccin-admonish.css">
         <link rel="stylesheet" href="./theme/mdbook-admonish.css">
-        <link rel="stylesheet" href="./mdbook-admonish.css">
 
     </head>
     <body class="sidebar-visible no-js">
@@ -93,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li><li class="chapter-item expanded "><a href="copy-files-from-one-branch-to-another.html">copy-files-from-one-branch-to-another</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="setting-up-mdbook.html">setting-up-mdbook</a></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="git.html">git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="setup-a-repository-with-remote.html">setup-a-repository-with-remote</a></li><li class="chapter-item expanded "><a href="lazy-git.html">lazy-git</a></li><li class="chapter-item expanded "><a href="setting-up-gpg-key.html">setting-up-gpg-key</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Linux</li><li class="chapter-item expanded "><a href="terminal-commands.html">terminal-commands</a></li><li class="chapter-item expanded affix "><li class="part-title">Neovim</li><li class="chapter-item expanded "><a href="find-and-replace.html">find-and-replace</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="dictionaries.html">dictionaries</a></li><li class="chapter-item expanded "><a href="arrays.html">arrays</a></li><li class="chapter-item expanded "><a href="binary-insertion-sort.html">binary-insertion-sort</a></li><li class="chapter-item expanded affix "><li class="part-title">Rust</li><li class="chapter-item expanded "><a href="starship.html">starship</a></li><li class="chapter-item expanded affix "><li class="part-title">Tools</li><li class="chapter-item expanded "><a href="zoxide.html">zoxide</a></li><li class="chapter-item expanded "><a href="alacritty.html">alacritty</a></li><li class="chapter-item expanded "><a href="uv.html">uv</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -185,6 +183,23 @@
                     <main>
                         <h1 id="welcome"><a class="header" href="#welcome">Welcome</a></h1>
 <p>Here I keep technical notes on things that I have discovered or learned. While mostly for my own reference, I am making them public on the off chance that someone else also finds them useful.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setting-up-mdbook"><a class="header" href="#setting-up-mdbook">Setting up mdBook</a></h1>
+<p>For full documentation see: https://rust-lang.github.io/mdBook/index.html</p>
+<h2 id="install"><a class="header" href="#install">Install</a></h2>
+<pre><code class="language-zsh">cargo install mdbook
+</code></pre>
+<p>To uninstall, run</p>
+<pre><code class="language-zsh">cargo uninstall mdbook
+</code></pre>
+<h2 id="create-a-book"><a class="header" href="#create-a-book">Create a book</a></h2>
+<pre><code class="language-zsh">mdbook init my-first-book
+</code></pre>
+<h2 id="editing-the-book"><a class="header" href="#editing-the-book">Editing the book</a></h2>
+<p>All edits should be made in the src directory, and new notes should be created from the <code>SUMMARY.md</code> file, which should be present after initialization. Once the <code>SUMMARY.md</code> file is saved, and <code>mdbook serve</code> is fun, appropriate markdown files will automatically be created.</p>
+<p>For example,</p>
+<pre><code class="language-md">- [setting-up-mdbook](./setting-up-mdbook.md)
+</code></pre>
+<p>The markdown files themselves can be edited using any standard markdown syntax.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="git"><a class="header" href="#git">git</a></h1>
 <p>To add changed files to staging</p>
 <p><code>git add &lt;filename&gt;</code></p>
@@ -245,10 +260,184 @@ sudo install lazygit /usr/local/bin
 export GPG_TTY=$(tty)
 </code></pre>
 <p>If &quot;keep my email private&quot; has been enabled in GitHub, then the email associated with the key must match the no-reply email provided by GitHub.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="copy-files-from-one-git-branch-to-another"><a class="header" href="#copy-files-from-one-git-branch-to-another">Copy files from one git branch to another</a></h1>
-<p>Given two branches, main and feature, the following commands will copy foo from main and place it on to feature.</p>
-<pre><code class="language-bash">git switch feature
-git checkout main foo
+<div style="break-before: page; page-break-before: always;"></div><h1 id="terminal-commands"><a class="header" href="#terminal-commands">Terminal Commands</a></h1>
+<p><code>cmp</code> - Compares to see if two files are equivalent</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="find-and-replace-in-neovim"><a class="header" href="#find-and-replace-in-neovim">Find and Replace in Neovim</a></h1>
+<h2 id="current-line---first-occurrence"><a class="header" href="#current-line---first-occurrence">Current Line - First Occurrence</a></h2>
+<p>Where <code>foo</code> is what you want to replace and <code>bar</code> is what you want to replace it with. 
+If what you need to search for uses <code>/</code> then <code>|</code> can be used a seperated instead.</p>
+<pre><code class="language-vimscript">:s/foo/bar/
+</code></pre>
+<h2 id="current-line---all-occurrences"><a class="header" href="#current-line---all-occurrences">Current Line - All Occurrences</a></h2>
+<pre><code class="language-vimscript">:s/foo/bar/g
+</code></pre>
+<h2 id="entire-file"><a class="header" href="#entire-file">Entire File</a></h2>
+<pre><code class="language-vimscript">:s%/food/bar
+</code></pre>
+<h2 id="remove-occurrences"><a class="header" href="#remove-occurrences">Remove Occurrences</a></h2>
+<pre><code class="language-vimscript">:s%/foo//
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dictionaries"><a class="header" href="#dictionaries">Dictionaries</a></h1>
+<h2 id="snippets"><a class="header" href="#snippets">Snippets</a></h2>
+<p>Combine dictionary A and dictionary B <em>without</em> overwriting dictionary A's values with dictionary B's.</p>
+<pre><code class="language-python">    for key, value in isle_mapping.items():
+        if key in cart:
+            cart[key].extend(value)
+        else:
+            cart[key] = value
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="arrays"><a class="header" href="#arrays">Arrays</a></h1>
+<h2 id="snippets-1"><a class="header" href="#snippets-1">Snippets</a></h2>
+<h3 id="flatten-an-array-which-may-contain-none-values"><a class="header" href="#flatten-an-array-which-may-contain-none-values">Flatten an Array which may contain None values</a></h3>
+<pre><code class="language-python">def flatten(iterable):
+    flattened_list = []
+    for item in iterable:
+        if isinstance(item, list):
+            flattened_list.extend(flatten(item))
+        elif item is not None: 
+            flattened_list.append(item)
+    return flattened_list
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="binary-insertion-sort"><a class="header" href="#binary-insertion-sort">Binary insertion sort</a></h1>
+<p>Source: https://the-algorithms.com/algorithm/binary-insertion-sort</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+This is a pure Python implementation of the binary insertion sort algorithm
+
+For doctests run following command:
+python -m doctest -v binary_insertion_sort.py
+or
+python3 -m doctest -v binary_insertion_sort.py
+
+For manual testing run:
+python binary_insertion_sort.py
+&quot;&quot;&quot;
+
+
+def binary_insertion_sort(collection: list) -&gt; list:
+    &quot;&quot;&quot;
+    Sorts a list using the binary insertion sort algorithm.
+
+    :param collection: A mutable ordered collection with comparable items.
+    :return: The same collection ordered in ascending order.
+
+    Examples:
+    &gt;&gt;&gt; binary_insertion_sort([0, 4, 1234, 4, 1])
+    [0, 1, 4, 4, 1234]
+    &gt;&gt;&gt; binary_insertion_sort([]) == sorted([])
+    True
+    &gt;&gt;&gt; binary_insertion_sort([-1, -2, -3]) == sorted([-1, -2, -3])
+    True
+    &gt;&gt;&gt; lst = ['d', 'a', 'b', 'e', 'c']
+    &gt;&gt;&gt; binary_insertion_sort(lst) == sorted(lst)
+    True
+    &gt;&gt;&gt; import random
+    &gt;&gt;&gt; collection = random.sample(range(-50, 50), 100)
+    &gt;&gt;&gt; binary_insertion_sort(collection) == sorted(collection)
+    True
+    &gt;&gt;&gt; import string
+    &gt;&gt;&gt; collection = random.choices(string.ascii_letters + string.digits, k=100)
+    &gt;&gt;&gt; binary_insertion_sort(collection) == sorted(collection)
+    True
+    &quot;&quot;&quot;
+
+    n = len(collection)
+    for i in range(1, n):
+        value_to_insert = collection[i]
+        low = 0
+        high = i - 1
+
+        while low &lt;= high:
+            mid = (low + high) // 2
+            if value_to_insert &lt; collection[mid]:
+                high = mid - 1
+            else:
+                low = mid + 1
+        for j in range(i, low, -1):
+            collection[j] = collection[j - 1]
+        collection[low] = value_to_insert
+    return collection
+
+
+if __name__ == &quot;__main&quot;:
+    user_input = input(&quot;Enter numbers separated by a comma:\n&quot;).strip()
+    try:
+        unsorted = [int(item) for item in user_input.split(&quot;,&quot;)]
+    except ValueError:
+        print(&quot;Invalid input. Please enter valid integers separated by commas.&quot;)
+        raise
+    print(f&quot;{binary_insertion_sort(unsorted) = }&quot;)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="starship"><a class="header" href="#starship">Starship</a></h1>
+<p>Starship is a fast command line prompt written in rust, compatible with bash, zsh and powershell (plus others)</p>
+<h2 id="installtion"><a class="header" href="#installtion">Installtion</a></h2>
+<p>To install, you may use cargo or install directly using a <code>.sh</code> file.</p>
+<pre><code class="language-zsh">cargo install starship --locked
+</code></pre>
+<h2 id="use"><a class="header" href="#use">Use</a></h2>
+<p>Simply place the following at the bottom of the <code>.zshrc</code> (or <code>.bashrc</code> etc) and reload the terminal.</p>
+<pre><code class="language-zsh">eval &quot;$(starship init zsh)&quot;
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<p>Create the configuration directory</p>
+<pre><code class="language-zsh">mkdir -p ~/.config &amp;&amp; touch ~/.config/starship.toml
+</code></pre>
+<p>Then make any cofiguration changes desired in that <code>.toml</code> file.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="zoxide"><a class="header" href="#zoxide">Zoxide</a></h1>
+<p>repo: https://github.com/ajeetdsouza/zoxide</p>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>Zoxide is a tool that remembers previous paths that you have been to through cd, allowing you to more easily navigate between directories. It can be aliased to cd so that it essentially functions like a smarter version of the same command.</p>
+<h2 id="installation-1"><a class="header" href="#installation-1">Installation</a></h2>
+<p>For zoxide itself
+<code>cargo install zoxide --locked</code></p>
+<p>For fzf
+<code>sudo apt install fzf</code></p>
+<p>Within <code>.zshrc</code></p>
+<pre><code class="language-zsh">eval &quot;$(zoxide init --cmd cd zsh)&quot;
+</code></pre>
+<p>Note that this will allow for the use of <code>cd</code> as normal, so that on systems that do not have zoxide installed, cd muscle memory is maintained.</p>
+<h2 id="use-1"><a class="header" href="#use-1">Use</a></h2>
+<pre><code class="language-bash">z foo              # cd into highest ranked directory matching foo
+z foo bar          # cd into highest ranked directory matching foo and bar
+z foo /            # cd into a subdirectory starting with foo
+
+z ~/foo            # z also works like a regular cd command
+z foo/             # cd into relative path
+z ..               # cd one level up
+z -                # cd into previous directory
+
+zi foo             # cd with interactive selection (using fzf)
+
+z foo&lt;SPACE&gt;&lt;TAB&gt;  # show interactive completions (zoxide v0.8.0+, bash 4.4+/fish/zsh only)
+</code></pre>
+<h2 id="linked-documentation"><a class="header" href="#linked-documentation">Linked Documentation</a></h2>
+<p>Youtube video: https://www.youtube.com/watch?v=aghxkpyRVDY</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="alacritty"><a class="header" href="#alacritty">Alacritty</a></h1>
+<h2 id="installation-2"><a class="header" href="#installation-2">Installation</a></h2>
+<h2 id="change-font"><a class="header" href="#change-font">Change font</a></h2>
+<p>Alacritty has all the configuration done in <code>alacritty.toml</code>. To change the font, just add the following after installing the font on the machine.</p>
+<pre><code class="language-toml">[font]
+size = 14.0
+
+[font.normal]
+family = &quot;Fira Mono Nerd Font&quot;
+style = &quot;Medium&quot;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uv"><a class="header" href="#uv">UV</a></h1>
+<p>An extremely fast Python package installer and resolver.</p>
+<p>Github repo: https://github.com/astral-sh/uv</p>
+<h2 id="installation-3"><a class="header" href="#installation-3">Installation</a></h2>
+<pre><code class="language-shell">pip install uv
+</code></pre>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<h3 id="create-a-virtual-environment"><a class="header" href="#create-a-virtual-environment">Create a virtual environment</a></h3>
+<p>The following will create a virutal environment at <code>.venv</code></p>
+<pre><code class="language-shell">uv venv
+</code></pre>
+<h3 id="activate-virtual-environment"><a class="header" href="#activate-virtual-environment">Activate virtual environment</a></h3>
+<pre><code class="language-shell">source .venv/bin/activate 
+</code></pre>
+<h3 id="install-packages-into-virtual-environment"><a class="header" href="#install-packages-into-virtual-environment">Install packages into virtual environment</a></h3>
+<pre><code class="language-shell">uv pip install flask
 </code></pre>
 
                     </main>

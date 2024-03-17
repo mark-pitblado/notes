@@ -1,0 +1,6 @@
+deploy:
+  image: codeberg.org/xfix/plugin-codeberg-pages-deploy:1
+  settings:
+    folder: book 
+    ssh_key:
+      from_secret: ssh_key
